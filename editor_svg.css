@@ -1,0 +1,225 @@
+﻿body
+{
+}
+/*Se seteaza culoarea de fundal, culoarea scrisului si incadrarea header-ului (Editor SVG)*/
+h1 {
+    background-color: darkgreen;
+    color: rgb(255, 255, 255);
+    padding: 16px;
+    margin: -12px -12px 20px -12px;
+    text-align: center;
+}
+
+/*Se aliniaza elementele din clasa active_tools */
+.active_tools {
+    /*Se foloseste optiunea flex pentru pozitionarea lor sub forma de rand*/
+    /*Adaugam bordura si pozotionam meniul*/
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;/*Elementele se incadreaza central*/
+    gap: 10px;/*Spatiul dintre ele este de 10px*/
+    color: white;
+    padding: 16px;
+    border: 10px solid darkgreen;
+    text-align: center;
+    background-color: #333;
+    border-right: 1px solid #555;
+    transition: background-color 0.3s;
+    margin: -30px -12px -12px -20px;
+}
+
+/*Pentru elementele din meniul de sus, adaugam proprietatea cursor, ce modifica cursorul intr-un indicator de tip pointer*/
+.active_tools div {
+    padding: 10px 20px;
+    cursor:pointer;
+    border: 1px solid #555;
+}
+
+/*Se seteaza pozitia, culoarea, si incadrarea elementelor din meniul din stanga, corespunzator clasei edit_tools*/
+.edit_tools {
+    /*Se foloseste proprietatea flex, pentru pozitionarea elementelor sub forma de coloana*/
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    top: 137.5px;
+    left: 0;
+    border-right: 8px solid darkgreen;
+    height: 100%;
+    width: 5%;
+    justify-content: flex-start;/*Incadrarea elementelor incepe de sus*/
+    gap: 10px;/*Spatiul dintre elemente va fi de 10px*/
+    padding-top: 140px;
+}
+
+/*Se seteaza modul de afisare al butoanelor din meniul edit_tools*/
+.edit_tools button {
+    background-color: #444;
+    border: 2px solid green;
+    color: white;
+    padding: 10px 20px;
+    width: 90%;
+    cursor: pointer;/*Proprietate ce permite afisarea cursorului sub forma de pointer*/
+    margin: 3px;
+}
+
+/*Cand utilizatorul atinge un buton, culoarea de fundal a acestuia devine gri deschis*/
+.edit_tools button:hover{
+    background-color: #666;
+}
+
+/*Se stilizeaza campurile de input din clasa edit_tools*/
+.edit_tools input{
+    background-color: #444;
+    border: 2px solid green;
+    color: white;
+    padding: 1px 10px;
+    width: 60%;
+    cursor: pointer;
+    margin: 3px;
+}
+
+/*Culoarea pentru cele doua elemente de tip label va fi alb*/
+.edit_tools label{
+    color: white;
+}
+
+/*Pozitionam meniul relativ*/
+.menu {
+    position: relative;
+}
+
+/*Cand utilizatorul trece peste meniu, culoarea de fundal devine gri deschis*/
+.menu:hover{
+    background-color: #555;
+}
+
+
+.undo:hover{
+    background-color: #555;
+}
+
+/*Optiunile din meniu sunt initial ascunse*/
+/*Setam pozitia lor, imediat sub optiunea din meniu*/
+.menu_list {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0; 
+    background-color: #333;
+    z-index: 1000;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+/*Pentru fiecare element din meniu se seteaza incadrarea, culoarea si schimbarea cursorului in tip pointer*/
+.menu_list div {
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu_list div:hover{
+    background-color: #555;
+}
+
+
+.menu:hover .menu_list {
+    display: block;
+}
+
+.edit{
+    position: relative;
+}
+
+.edit:hover{
+    background-color: #555;
+}
+
+.edit_list {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0; 
+    background-color: #333;
+    z-index: 1000;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.edit_list input {
+    width: 136px;
+    height: 26px;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+
+/*Setam dimensiunile svg-ului, bordura, incadadrea si culorea ce fundal*/
+svg {
+    width: 750px;
+    height: 550px;
+    margin: 0px;
+    padding: 0px;
+    border: 3px solid darkgreen;
+    cursor: crosshair;
+    margin-left:400px;
+    margin-top:20px;
+    background-color:aquamarine;
+}
+
+/*Elementele de tip dreptunghi vor fi initial verzi cu un contur albastru inchis*/
+svg rect {
+    fill: darkgreen;
+    fill-opacity: 0.8;
+    stroke: darkblue;
+    stroke-opacity: 0.8;
+    stroke-width: 3px;
+}
+
+/*Liniile vor fi albatru uinchis, cu o grosime de 3px*/
+svg line {
+    stroke: darkblue;
+    stroke-opacity: 0.8;
+    stroke-width: 3px;
+}
+
+/*Elipsele vor fi tot verzi inchis, cu un contur albastru inchis, de 3px grosime*/
+svg ellipse {
+    fill: darkgreen;
+    fill-opacity: 0.8;
+    stroke: darkblue;
+    stroke-opacity: 0.8;
+    stroke-width: 3px;
+}
+
+/*La desenarea dreptunghiului, acesta va fi transparent, iar conturul punctat*/
+svg #selectie_rect {
+    fill: transparent;
+    stroke-opacity: 1;
+    stroke-dasharray: 3,3;
+    stroke: black;
+}
+
+/*La desenarea liniei, aceasta va fi transparenta si punctata*/
+svg #selectie_line {
+    fill: transparent;
+    stroke-opacity: 1;
+    stroke-dasharray: 3,3;
+    stroke: black;
+}
+
+/*/*La desenarea elipsei, aceasta va fi transparenta, iar conturul punctat*/
+svg #selectie_ellip{
+    fill: transparent;
+    stroke-opacity: 1;
+    stroke-dasharray: 3,3;
+    stroke: black;
+}
+
+

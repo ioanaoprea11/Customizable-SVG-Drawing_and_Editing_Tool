@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Editor SVG</title>
+    <link rel="stylesheet" type="text/css" href="editor_svg.css">
+    <script src="editor_svg.js"></script>
+</head>
+<body>
+    <h1>Editor SVG</h1>
+    <!--Container ce cuprinde optiunile FILE, UNDO si EDIT-->
+    <div class="active_tools">
+        <!--Container FILE, ce prezinta uramatoarele optiuni: Export to png, Export to jpeg si Save-->
+        <div class="menu" id="fileMenu">
+            FILE
+            <div class="menu_list" id="file_menu">
+                <!--Container creat cu scopul de a afisa functionalitatea de export in format raster(png)-->
+                <div id="export_png">Export to png</div>
+                <!--Container creat cu scopul de a afisa functionalitatea de export in format raster(jpeg)-->
+                <div id="export_jpeg">Export to jpeg</div>
+            </div>
+        </div>
+        <!--Container pentru afisarea optiunii de UNDO-->
+        <div class="undo">UNDO</div>
+        <!--Container creat pentru afisarea optiuni de EDIT-->
+        <div class="edit" id="btnEdit">
+            EDIT
+            <!--Container creat cu socpul de a prezenta optiunile oferite de EDIT, prin prezentarea mai usoara a continutului-->
+            <!--folosind clasa edit_list-->
+            <div class="edit_list" id="edit_menu">
+            </div>
+        </div>
+    </div>
+
+    <!--Container creat pentru gruparea butoanelor si optiunilor de modificarea a formelor-->
+    <div class="edit_tools">
+        <!--Buton creat pentru optiunea de adaugare a unei linii-->
+        <button id="btnLine">╲</button>
+        <!--Buton creat pentru optiunea de adaugare a unui dreptunghi-->
+        <button id="btnRect">▆</button>
+        <!--Buton creat pentru optiunea de adaugare a unui cerc-->
+        <button id="btnEllipse">🔘</button>
+        <!--Label creat pentru afisarea optiunii Thickness-->
+        <label for="line_width">Thickness:</label>
+        <!--Optiune de input ce ofera posibilitatea de a selecta grosimea liniei-->
+        <input type="number" id="line_width">
+        <!--Label creat pentru afisarea optiunii Color-->
+        <label for="add_color">Color:</label>
+        <!--Optiune de input ce ofera posibilitatea de a selecta culoarea formei-->
+        <input type="color" id="add_color">
+    </div>
+
+    <!--Format pentru reprezentari vectoriale-->
+    <svg id="editor">
+        <!--Container folosit pentru gruparea elementelor SVG-->
+        <g id="desen"></g>
+        <!--Elementul SVG ce permite vizualizarea formei de dreptunghi in timpul constructiei-->
+        <rect id="selectie_rect" width="0" height="0" style="display:none;"></rect>
+        <!--Elementul SVG ce permite vizualizarea formei de linie in timpul constructiei-->
+        <line id="selectie_line" x1="0" y1="0" x2="0" y2="0" style="display:none;"></line>
+        <!--Elementul SVG ce permite vizualizarea formei de cerc in timpul constructiei-->
+        <ellipse id="selectie_ellip" cx="0" cy="0" rx="0" ry="0" style="display:none;"></ellipse>
+    </svg>
+</body>
+    </html>
