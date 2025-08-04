@@ -1,6 +1,6 @@
 This project is a web-based SVG editor that allows users to create, modify, and export vector shapes. Users can draw lines, rectangles, and ellipses, customize colors and thickness, undo actions, and save/export their drawings in PNG or JPEG format.
 
-📌 Features
+Features:
 -Draw and Edit Shapes
 -Add lines, rectangles, and ellipses to the canvas.
 -Adjust color and thickness of shapes.
@@ -13,7 +13,7 @@ This project is a web-based SVG editor that allows users to create, modify, and 
 -Export drawings as PNG or JPEG images.
 -Save and reload drawings using local storage.
 
-🛠️ Technologies Used
+Technologies Used:
 HTML – Structure of the web page.
 CSS  – Styling for the editor interface.
 JavaScript – Core logic for SVG drawing and editing.
